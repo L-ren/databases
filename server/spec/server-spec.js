@@ -16,12 +16,16 @@ describe('Persistent Node Chat Server', () => {
   beforeAll((done) => {
     dbConnection.connect();
 
-       const tablename = ''; // TODO: fill this out
+       const users = 'users'; // TODO: fill this out
+       const messages = 'messages';
+       const friends = 'friends';
 
     /* Empty the db table before all tests so that multiple tests
      * (or repeated runs of the tests)  will not fail when they should be passing
      * or vice versa */
-    dbConnection.query(`truncate ${tablename}`, done);
+    dbConnection.query(`truncate ${users}`, done);
+    dbConnection.query(`truncate ${messages}`, done);
+     dbConnection.query(`truncate ${friends}`, done);
   }, 6500);
 
   afterAll(() => {
