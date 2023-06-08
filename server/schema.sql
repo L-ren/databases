@@ -11,6 +11,7 @@ CREATE TABLE users (
 CREATE TABLE messages (
   /* Describe your table here.*/
   id INT NOT NULL AUTO_INCREMENT,
+  text VARCHAR(140),
   userId INT,
   PRIMARY KEY(id),
   FOREIGN KEY(userId)
